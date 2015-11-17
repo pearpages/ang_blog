@@ -1,4 +1,3 @@
-# ang_blog
-Just another test with the angular framework
+# angular-blog-fail
 
-#read my blog http://www.pearpages.com
+Just another test with the **angular** framework. Not finished!
