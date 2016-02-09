@@ -22,4 +22,4 @@ markdown: kramdown
 kramdown:
     input: GFM
 highlighter: rouge
-exclude: [node_modules, gulpfile.js]
+exclude: [node_modules, gulpfile.js, package.json, blog.sublime-project]
