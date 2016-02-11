@@ -1,3 +1,3 @@
-# angular-blog-fail
+# Test Repository
 
-Just another test with the **angular** framework. Not finished!
+Repository with various tests in its different branches.
