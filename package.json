@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "serve": "nodemon index.js",
+    "multi": "forever servers/cat.js | forever servers/dog.js | forever servers/pet.js"
   },
   "keywords": [],
   "author": "",
