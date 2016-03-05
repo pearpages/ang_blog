@@ -4,6 +4,10 @@ var async = require('async');
 
 module.exports = function(app) {
 
+	app.get('/ping', function (req, res) {
+		res.json({pong: Date.now()});
+	});
+
     /* Read */
     app.get('/pets', function(req, res) {
         async.parallel({
