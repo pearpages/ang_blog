@@ -1,6 +1,7 @@
 var r = require('request').defaults({ json: true });
 
 var async = require('async');
+var redis = require('redis');
 
 module.exports = function(app) {
 
