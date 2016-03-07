@@ -14,3 +14,5 @@ gulp.task('watch-mocha', function () {
 	gulp.run('mocha');
 	gulp.watch(['./**/*.js', 'test/**/*.js'], ['mocha']);
 });
+
+gulp.task('default', ['watch-mocha']);
