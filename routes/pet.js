@@ -39,7 +39,8 @@ module.exports = function(app) {
                             }
                             if (!error && response.statusCode === 200) {
                                 callback(null,body);
-                                client.set('http://localhost:3001/dog', JSON.stringify(body), function (error) {
+                                //client.set('http://localhost:3001/dog', JSON.stringify(body.data), function (error) {
+                                client.setex('http://localhost:3001/dog', 10, JSON.stringify(body.data), function (error) {
                                     if (error) { throw error;}
                                 });
                             } else {
