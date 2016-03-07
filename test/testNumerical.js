@@ -47,10 +47,10 @@ describe('number tests', function () {
 		});
 
 		afterEach(function () {
-			console.log('test run');
+			// ...
 		});
 
-		it('shuld 13 adding 8 to 5', function () {});
+		it('should 13 adding 8 to 5', function () {});
 
 		it('should be ten adding 5 to 5', function () {
 			add(num,5).should.equal(10);
