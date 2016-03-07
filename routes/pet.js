@@ -27,17 +27,27 @@ module.exports = function(app) {
                 });
             },
             dog: function (callback) {
-            	r({uri: 'http://localhost:3001/dog'}, function (error,response,body) {
-            		if (error) {
-            			callback({service: 'dog', error: error});
-            			return;
-            		}
-            		if (!error && response.statusCode === 200) {
-            			callback(null,body);
-            		} else {
-            			callback(response.statusCode);
-            		}
-            	});
+                client.get('http://localhost:3001/dog', function (error,dog) {
+                    if (error) {throw error;}
+                    if (dog) {
+                        callback(null, JSON.parse(dog));
+                    } else {
+                        r({uri: 'http://localhost:3001/dog'}, function (error,response,body) {
+                            if (error) {
+                                callback({service: 'dog', error: error});
+                                return;
+                            }
+                            if (!error && response.statusCode === 200) {
+                                callback(null,body);
+                                client.set('http://localhost:3001/dog', JSON.stringify(body), function (error) {
+                                    if (error) { throw error;}
+                                });
+                            } else {
+                                callback(response.statusCode);
+                            }
+                        });
+                    }
+                })
             }
         },
         function (error,results) {
