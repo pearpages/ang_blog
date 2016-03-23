@@ -1,6 +1,7 @@
 'use strict';
 
-var rootPath = "../students/";
+// from the app level
+var rootPath = "./students/";
 
 var fs = require("fs"), _p;
 
