@@ -48,8 +48,34 @@ describe("Course", function() {
         it('should throw an error if we try to remove a student that is not in the class', function() {
             var course = Course.create(courseName, courseCode, courseDescription);
 
+            // when we test errors we use anonymous functions
             expect(function() {
                 course.unregisterStudent("asdf");
+            }).to.throw();
+        });
+    });
+
+    describe('addTimes', function() {
+        it('should add the given days/times to the course', function (){
+            var course = Course.create(courseName, courseCode, courseDescription);
+            var days = ["Monday", "Wednesday", "Friday"],
+                times= ["10:00","14:00"];
+
+            course.addTimes(days,times);
+
+            course.times.length.should.equal(6);
+            course.times[2].should.eql({
+                day: "Wednesday",
+                time: "10:00"
+            });
+        });
+
+        it('should not add a non-day to the times array', function() {
+            var course = Course.create(courseName, courseCode, courseDescription);
+            var day = "fabulousday", time = "10:00";
+
+            expect(function() {
+                course.addTimes(day,time);
             }).to.throw();
         });
     });
