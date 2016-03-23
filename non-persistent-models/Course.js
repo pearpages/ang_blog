@@ -13,13 +13,13 @@ Course.create = function (name, code, description) {
 	course.times = [];
 
 	return course;
-}
+};
 
 var _p = Course.prototype;
 
 _p.registerStudent = function (student) {
 	this.students.push(student);
-}
+};
 
 _p.unregisterStudent = function (studentId) {
 	var me = this;
@@ -32,7 +32,7 @@ _p.unregisterStudent = function (studentId) {
 	})) {
 		throw new Error("Student '"+studentId+"' is not registered for this course");
 	}
-}
+};
 
 _p.addTimes = function (days, times) {
 	var me = this;
@@ -53,7 +53,7 @@ _p.addTimes = function (days, times) {
 			});
 		});
 	});
-}
+};
 
 _p.showSchedule = function () {
 	var scheduleString = "", first = true;
