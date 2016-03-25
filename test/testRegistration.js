@@ -9,14 +9,17 @@ Student = req('Student'),
 Registration = req('Registration'),
 DataLoader = require('../core/DataLoader'),
 chai = require("chai"),
-sinon = require('sinon'),
-expect = chai.expect;
+sinon = require('sinon');
 
 chai.should();
 
 describe("Registration", function () {
-    it("should fail", function() {
-        expect(1).to.equal(2);    
-    });
-    
+    var dataLoader,
+    student,
+    course,
+    registration;
+
+    it("doesn't call save if the course is full", function () {
+        
+    });    
 });
