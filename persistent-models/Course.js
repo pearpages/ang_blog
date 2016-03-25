@@ -18,7 +18,7 @@ module.exports.create = function (DataLoader) {
 
     _p = Course.prototype;
 
-    _p.save = function () {
+    _p._save = function () {
         var me = this,
         toSave = {};
 
