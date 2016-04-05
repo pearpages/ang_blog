@@ -1,3 +1,7 @@
-# Node Api Basics
+# Some Examples
 
-Remember to run the redis-server and mongod before starting the app.
++ There are some examples of testing node @see ./test folder
++ Code coverage with Istanbul
++ API routing @see ./routes and ./servers
++ Functional programming ./functional-programming 
+
